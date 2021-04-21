@@ -2,7 +2,7 @@
 
 This is a docker file for a simple HTTP stress test built in PHP, useful for autoscaling tests.
 
-The image jleonardolemos/http-stress is built for this Dockerfile
+The image leonardolemos/http-stress is built for this Dockerfile
 
 **IMPORTANT: This image is not production ready**
 
@@ -13,7 +13,7 @@ You can clone this repository and build your own container in order to stress yo
 1. clone this repo:
 
 ```sh
-git clone git@github.com:jleonardolemos/http-stress.git
+git clone git@github.com:leonardolemos/http-stress.git
 ```
 
 2. build your own image:
