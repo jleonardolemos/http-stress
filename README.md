@@ -1,36 +1,18 @@
 ## Simple stress test
 
-This is a docker file for a simple HTTP stress test built in PHP, useful for autoscaling tests.
-
-The image leonardolemos/http-stress is built for this Dockerfile
+This [image](https://hub.docker.com/r/leonardolemos/http-stress) is meant for a simple HTTP stress test, built in PHP, useful for autoscaling tests.
 
 **IMPORTANT: This image is not production ready**
-
-### Building container
-
-You can clone this repository and build your own container in order to stress your system:
-
-1. clone this repo:
-
-```sh
-git clone git@github.com:leonardolemos/http-stress.git
-```
-
-2. build your own image:
-
-```sh
-docker build -t you/imagename .
-```
 
 ### Running the container
 
 Use this command to run the container:
 
 ```sh
-docker run -p 8000:8000 you/imagename
+docker run -p 8000:8000 leonardolemos/http-stress
 ```
 
-The service will be acessible in `localhost:8000`
+The service will be accessible in `localhost:8000`
 
 ### Get general information from server
 
@@ -81,9 +63,9 @@ This will stress a single core of the system, the param `seconds` is the amount 
 
 You can reach `/memory.php?megas=2048&seconds=10`
 
-This will get an ammount of memory for a few seconds, the param `megas` is the amount of memory(500MB by default), the param `seconds` is the time in seconds before the memory be released, 1 second by default.
+This will get an amount of memory for a few seconds, the param `megas` is the amount of memory(500MB by default), the param `seconds` is the time in seconds before the memory be released, 1 second by default.
 
-**Important: if you are testing autoscaling by memory, the PHP builtin server handles 1 request per time and the request for memory endpoint only finishes when `time` is over, this will get your instance unhealth by the load balancer cheks**
+**Important: if you are testing autoscaling by memory, the PHP builtin server handles 1 request per time and the request for memory endpoint only finishes when `time` is over, this will get your instance unhealthy by the load balancer cheks**
 
 ### PHP info
 
